@@ -98,8 +98,12 @@ static LookupResult LookupName(Sema &SemaRef, const char* Name) {
   return R;
 }
 
-std::string GetCompleteName(void* klass)
-  {
+bool IsClass(void * scope) {
+    Decl *D = static_cast<Decl*>(scope);
+    return isa<CXXRecordDecl>(D);
+}
+
+std::string GetCompleteName(void* klass) {
     auto &C = ExampleLibrary::GetInterpreter()->getCompilerInstance()->getSema().getASTContext();
     auto *D = (Decl *) klass;
 

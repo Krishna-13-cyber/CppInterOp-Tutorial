@@ -18,7 +18,9 @@ extern "C" {
   ///
   FnAddr_t Clang_GetFunctionAddress(Decl_t D);
 
-  std::string GetCompleteName(Decl_t A);
+  std::string GetCompleteName(Decl_t klass);
+
+  bool isClass(Decl_t scope);
 
   /// Allocates memory of underlying size of the passed declaration.
   ///
