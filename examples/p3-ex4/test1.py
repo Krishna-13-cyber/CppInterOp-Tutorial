@@ -48,6 +48,9 @@ class InterOpLayerWrapper:
   def get_scope(self, name):
     return self._get_scope(name.encode("ascii"))
 
+  def get_scope_name(self, scope, name):
+    return self._get_scope_name(scope, name.encode("ascii"))
+
   def get_template(self, scope, name, tmpl_args = [], tpargs = []):
     if tmpl_args:
       # Instantiation is explicit from full name

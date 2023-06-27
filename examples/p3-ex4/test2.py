@@ -48,6 +48,9 @@ class InterOpLayerWrapper:
   def get_scope(self, name):
     return self._get_scope(name.encode("ascii"))
 
+ def isclass(self, scope,name):
+    return self. _get_isclass(scope,name.encode("ascii"))    
+
   def get_template(self, scope, name, tmpl_args = [], tpargs = []):
     if tmpl_args:
       # Instantiation is explicit from full name
@@ -134,7 +137,7 @@ if __name__ == '__main__':
   b = CppB()
   c = CppC()
 
-  print(gIL.isClass('C'))  
+  print(gIL.isclass('C'))  
   # explicit template instantiation
   b.callme['A, int, C*'](a, 42, c)
 
